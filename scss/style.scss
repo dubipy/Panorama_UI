@@ -36,7 +36,6 @@ body {
         left: 50%;
         margin-left: -300px;
         margin-top: -400px;
-        border: 1px solid aqua; //임의 보이기 값 곧 삭제
 
         article {
             width: 100%;
@@ -44,7 +43,35 @@ body {
             position: absolute;
             top: 0px;
             left: 0px;
-            background: rgba(255, 255, 255,.4);
+            display: none;
+
+            &:nth-of-type(1) {
+                display: block;
+            }
+
+            .inner {
+                width: 100%;
+                height: 100%;
+
+                > div {
+                    width: 100%;
+                    height: 100%;
+                    border: 1px solid rgba(255, 255, 255,.5);
+                    background: rgba(255, 255, 255,.4);
+                    box-sizing: border-box;
+                    padding: 50px;
+                    position: relative;
+                    overflow: hidden;
+                    cursor: pointer;
+                    opacity: 0.7;
+                    transition: 0.5s;
+
+                    &:hover {
+                        opacity: 1;
+                        transform: scale(1.03);
+                    }
+                }
+            }
         }
     }
 }
