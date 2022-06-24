@@ -1,0 +1,50 @@
+@charset "UTF-8";
+@import "_reset.scss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    background: #000;
+    font: 17px/1.4 "orbitron";
+    letter-spacing: 1px;
+    color: #ddd;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    //자식 요소 3D가 제대로 표현되려면 부모에 강제로 원근감을 지정한다
+    perspective: 1300px; //원근감 주기
+    position: relative;
+
+    // >를 지정하면 부모의 직계자식만 해당된다 wrap의 직계자식인 video
+    > video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        opacity: 0.5;
+    }
+
+    #circle {
+        width: 600px;
+        height: 800px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -300px;
+        margin-top: -400px;
+        border: 1px solid aqua; //임의 보이기 값 곧 삭제
+
+        article {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: rgba(255, 255, 255,.4);
+        }
+    }
+}
